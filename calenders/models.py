@@ -12,4 +12,4 @@ class Calender(CommonModel):
     )
 
     def __str__(self):
-        return self.created_at
+        return f"{(self.created_at)}"
