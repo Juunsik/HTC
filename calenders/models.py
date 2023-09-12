@@ -5,9 +5,16 @@ from common.models import CommonModel
 
 
 class Calender(CommonModel):
-    today_complete = models.BooleanField()  # 해당 운동을 오늘 했는가
+    today_complete = models.BooleanField(default=False)  # 해당 운동을 오늘 했는가
     workouts = models.ManyToManyField(
         "workouts.WorkOut",
+        related_name="calenders",
+    )
+    users = models.ForeignKey(
+        "users.User",
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE,
         related_name="calenders",
     )
 
