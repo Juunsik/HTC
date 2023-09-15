@@ -19,4 +19,4 @@ class Calender(CommonModel):
     )
 
     def __str__(self):
-        return f"{(self.created_at)}"
+        return f"{(self.created_at)} / {(self.users)}"
