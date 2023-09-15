@@ -13,10 +13,10 @@ class CalenderPageNumberPagination(PageNumberPagination):
 
 
 class CalenderListView(generics.ListCreateAPIView):
-    queryset = Calender.objects.all()
+    # queryset = Calender.objects.all()
+    # lookup_field = "users_id"
     serializer_class = CalenderSerializer
     pagination_class = CalenderPageNumberPagination
-    lookup_field = "users"
 
     def get_queryset(self):
         return Calender.objects.filter(users_id=self.kwargs["users_id"])
